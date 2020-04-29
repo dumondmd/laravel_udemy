@@ -15,22 +15,23 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name("rota.home");
 
 Route::get('ola/{nome}/{sobrenome}', function( $nome, $sobrenome) {
 	echo "Ola! Seja bem vindo, $nome $sobrenome";
-});
+})->name("rota.nome.sobrenome");
 
 Route::get('/seunome/{nome?}', function($nome="Sem nome") {
 	echo "Ola! Seja bem vindo, $nome!";
-});
+})->name("rota.nome.opcional");
 
 Route::get('/rotacomregras/{nome}/{n}', function($nome, $n) {
 	for ($i=0; $i < $n; $i++) { 
 		echo "Ola! Seja bem vindo, $nome! - $n<br>";
 	}
 })->where('nome','[A-Za-z]+')
-  ->where('n', '[0-9]+');	
+  ->where('n', '[0-9]+')
+  ->name("rota.regras");	
 
 
 
@@ -38,14 +39,30 @@ Route::prefix('/app')->group(function() {
 
 	Route::get('/', function() {		
 		return view('app');
-	});
+	})->name('app');
 
 	Route::get('/user', function() {
 		return view('user');
-	});
+	})->name("app.user");
 
 	Route::get('/profile', function() {
 		return view('profile');
-	});
+	})->name("app.profile");
 
 });
+
+Route::get('/produtos', function() {
+	echo "<h1>Produtos</h1>";
+	echo "<ol>";
+	echo "<li>Notebook</li>";
+	echo "<li>Impressora</li>";
+	echo "<li>Mouse</li>";
+	echo "</ol>";
+})->name('meusprodutos');
+
+
+
+Route::get('/todosprodutos', function () {    
+
+    return redirect()->route('meusprodutos');
+})->name('redirecionamento');
