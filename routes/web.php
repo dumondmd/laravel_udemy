@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use Illuminate\Http\Request;
 
 Route::get('/', function () {
     return view('welcome');
@@ -60,9 +61,33 @@ Route::get('/produtos', function() {
 	echo "</ol>";
 })->name('meusprodutos');
 
-
-
 Route::get('/todosprodutos', function () {    
 
     return redirect()->route('meusprodutos');
 })->name('redirecionamento');
+
+//----REST----//
+
+Route::get('/requisicoes', function(Request $request) {
+	return 'Hello GET';
+})->name("rest.get");
+
+Route::post('/requisicoes', function(Request $request) {
+	return 'Hello POST';
+})->name("rest.post");
+
+Route::delete('/requisicoes', function(Request $request) {
+	return 'Hello DELETE';
+})->name("rest.delete");
+
+Route::put('/requisicoes', function(Request $request) {
+	return 'Hello PUT';
+})->name("rest.put");
+
+Route::patch('/requisicoes', function(Request $request) {
+	return 'Hello PATCH';
+})->name("rest.patch");
+
+Route::options('/requisicoes', function(Request $request) {
+	return 'Hello OPTIONS';
+})->name("rest.options");
