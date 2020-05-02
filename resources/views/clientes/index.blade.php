@@ -1,5 +1,7 @@
 <h1>{{$titulo}}</h1>
 <h3><a href="{{route('clientes.create')}}">Novo cliente</a></h3>
+
+@if(count($clientes)>0)
 <ul>
 	@foreach($clientes as $c)
 		<li>{{$c['id']}} | {{$c['nome']}} |
@@ -13,3 +15,12 @@
 		</li>
 	@endforeach
 </ul>
+@else
+<h4>Não existem clientes cadastrados</h4>
+@endelse
+
+@endif
+
+@empty($clientes)
+<h4>Não existem clientes cadastrados</h4>
+@endempty
