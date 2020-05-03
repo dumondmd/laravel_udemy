@@ -18,7 +18,14 @@ Route::get('/', function () {
     return view('welcome');
 })->name("rota.home");
 
-Route::get('produtos', 'MeuControlador@produtos')->name("rota.produtos");
+//Route::get('produtos', 'MeuControlador@produtos')->name("rota.produtos");
+Route::get('produtos', function() {
+	return view('outras.produtos');
+})->name("outras.produtos");
+
+Route::get('departamentos', function() {
+	return view('outras.departamentos');
+})->name("outras.departamentos");
 
 Route::get('nome', 'MeuControlador@getNome')->name("rota.nome");
 Route::get('idade', 'MeuControlador@getIdade')->name("rota.idade");
