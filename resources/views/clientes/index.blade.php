@@ -1,4 +1,5 @@
 @extends('layouts.principal')
+@section('titulo','Clientes')
 @section('conteudo')
 	<h1>{{$titulo}}</h1>
 	<h3><a href="{{route('clientes.create')}}">Novo cliente</a></h3>

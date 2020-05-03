@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="{{asset('css/principal.css')}}">
-	<title>Views</title>
+	<title>@yield('titulo')</title>
 </head>
 <body>	
 	<div class="row">
