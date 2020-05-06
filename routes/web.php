@@ -32,3 +32,7 @@ Route::get('idade', 'MeuControlador@getIdade')->name("rota.idade");
 Route::get('multiplicar/{n1}/{n2}', 'MeuControlador@multiplicar')->name("rota.multiplicar");
 
 Route::resource('clientes', 'ClienteControlador');
+
+Route::get('opcoes/{opcao?}', function($opcao=null) {
+	return view('outras.opcoes', compact(['opcao']));		
+})->name("outras.opcoes");

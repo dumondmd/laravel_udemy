@@ -23,6 +23,13 @@
 						href="{{route('outras.departamentos')}}">Departamentos</a>
 					</li>
 
+
+					<li><a class="{{request()->routeIs('outras.opcoes') ? 'active': ''}}"
+						href="{{route('outras.opcoes')}}">Opções</a>
+					</li>
+
+					
+
 				</ul>	
 			</div>					
 		</div>
