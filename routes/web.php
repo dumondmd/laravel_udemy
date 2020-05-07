@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 })->name("rota.home");
 
+Route::get('/home', function () {
+    return view('home');
+})->name("rota.bootstrap");
+
 //Route::get('produtos', 'MeuControlador@produtos')->name("rota.produtos");
 Route::get('produtos', function() {
 	return view('outras.produtos');
