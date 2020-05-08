@@ -36,4 +36,42 @@ npm run dev
 {{asset('site/bootstrap.js')}}
 ```
 
+# Tinker
 
+## Usando o Tinker pelo terminal
+
+Iniciando o tiker, necessita parar o **namespace**
+```
+dumon@Dell:~/Documentos/laravel_udemy$ php artisan tinker
+Psy Shell v0.10.3 (PHP 7.4.3 — cli) by Justin Hileman
+>>> use \App\Brand;
+>>> Brand::all()
+=> Illuminate\Database\Eloquent\Collection {#3039
+     all: [],
+   }
+>>> 
+```
+Salvando um registro, com o save()
+```
+>>> $brand = new Brand;
+=> App\Brand {#3028}
+>>> $brand->name = "Toshiba"
+=> "Toshiba"
+>>> $brand->save()
+=> true
+```
+Buscando o registro salvo na base de dados, com o all()
+```
+>>> Brand::all()
+=> Illuminate\Database\Eloquent\Collection {#3043
+     all: [
+       App\Brand {#3042
+         id: 1,
+         name: "Toshiba",
+         created_at: "2020-05-08 19:07:22",
+         updated_at: "2020-05-08 19:07:22",
+       },
+     ],
+   }
+
+```
