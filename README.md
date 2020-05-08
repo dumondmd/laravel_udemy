@@ -3,7 +3,7 @@
 
 Curso de Laravel completo
 
-#Instruções pacotes node_modules
+# Instruções pacotes node_modules
 
 Instale com *npm install NOME*
 
@@ -14,7 +14,7 @@ npm install jquery
 ## Instalando Bootstrap 
 npm install bootstrap
 
-##Configurando webpack.mix.js
+## Configurando webpack.mix.js
 
 No **webpack.mix.js** coloque 
 
@@ -30,7 +30,7 @@ Após isto rodar o **npm** para compilar as dependencias que estão anotadas no 
 ```
 npm run dev
 ```
-##Uso dos recursos
+## Uso dos recursos
 
 ```
 {{asset('site/bootstrap.js')}}
