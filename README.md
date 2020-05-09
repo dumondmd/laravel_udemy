@@ -75,3 +75,10 @@ Buscando o registro salvo na base de dados, com o all()
    }
 
 ```
+Buscando um único registro, com o all()
+```
+>>> use \App\Brand;
+>>> Brand::find(1)
+>>> Brand::where('id',1)
+>>> Brand::where('id','>',1)->get() //Mostra todos ids maiores que 1
+```
